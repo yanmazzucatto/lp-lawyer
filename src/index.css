@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 18% 16%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 20% 13%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 20% 13%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 35 35% 62%;
+    --primary-foreground: 210 20% 10%;
+
+    --secondary: 210 15% 22%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 210 12% 25%;
+    --muted-foreground: 210 10% 65%;
+
+    --accent: 35 35% 62%;
+    --accent-foreground: 210 20% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 12% 28%;
+    --input: 210 12% 28%;
+    --ring: 35 35% 62%;
+
+    --radius: 0.5rem;
+
+    --gold: 35 35% 62%;
+    --gold-light: 35 40% 72%;
+    --gold-dark: 35 30% 50%;
+    --navy: 210 25% 12%;
+    --navy-light: 210 18% 20%;
+    --charcoal: 210 18% 16%;
+    --charcoal-light: 210 14% 22%;
+
+    --sidebar-background: 210 25% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 35 35% 62%;
+    --sidebar-primary-foreground: 210 20% 10%;
+    --sidebar-accent: 210 15% 22%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 210 12% 28%;
+    --sidebar-ring: 35 35% 62%;
+
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(35 40% 72%), hsl(35 35% 62%), hsl(35 30% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, hsl(35 40% 72%), hsl(35 35% 62%), hsl(35 30% 50%));
+  }
+
+  .bg-cta-gradient {
+    background: linear-gradient(135deg, hsl(142 50% 40%), hsl(142 45% 35%));
+  }
+
+  .bg-glass {
+    background: hsla(210, 20%, 13%, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(35, 35%, 62%, 0.15);
+  }
+
+  .gold-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(35 35% 62%), transparent);
+  }
+
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
